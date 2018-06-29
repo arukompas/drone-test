@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@import url(https://use.fontawesome.com/releases/v5.1.0/css/all.css);/*!
+@import url(https://use.fontawesome.com/releases/v5.1.0/css/all.css);/*!
  * Bootstrap v4.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -10411,6 +10411,11 @@ a.text-dark:focus {
   }
 }
 
+:root {
+  --input-padding-x: .75rem;
+  --input-padding-y: .75rem;
+}
+
 body {
   font-size: .875rem;
 }
@@ -10420,15 +10425,8 @@ div#app {
 }
 
 [role="main"] {
-  padding-top: 48px;
+  padding-top: 56px;
   /* Space for fixed navbar */
-}
-
-/** Fix the navbar dropdowns when they're on the edge of right-hand side */
-
-#navbarMenu .dropdown-menu {
-  left: inherit;
-  right: 0;
 }
 
 /*

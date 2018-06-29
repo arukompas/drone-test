@@ -16,12 +16,16 @@ let routes = [
     {
         path: '/dashboard', name: 'dashboard',
         component: require('../views/Dashboard.vue'),
-        children: [
-            {
-                path: 'orders', name: 'orders',
-                component: require('../views/Orders.vue')
-            }
-        ]
+        meta: {
+            auth: true
+        }
+    },
+    {
+        path: '/orders', name: 'orders',
+        component: require('../views/Orders.vue'),
+        meta: {
+            auth: true
+        }
     }
 ];
 

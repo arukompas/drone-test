@@ -1,18 +1,23 @@
 <template>
-    <div>
-        <form class="form-signin">
+    <div id="register-page">
+        <form class="form-signin" @submit.prevent="register">
             <div class="text-center mb-4">
                 <img class="mb-4" src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">Register</h1>
             </div>
 
             <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <input v-model="name" type="name" id="inputName" class="form-control" placeholder="Your name" required autofocus>
+                <label for="inputName">Name</label>
+            </div>
+
+            <div class="form-label-group">
+                <input v-model="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
                 <label for="inputEmail">Email address</label>
             </div>
 
             <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input v-model="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                 <label for="inputPassword">Password</label>
             </div>
 
@@ -25,22 +30,52 @@
 
 <script scoped>
 export default {
+    data() {
+        return {
+            name: '',
+            email: '',
+            password: '',
+            error: false,
+            errors: {},
+            success: false
+        }
+    },
 
+    methods: {
+        register() {
+            var app = this;
+            this.$auth.register({
+                params: {
+                    name: app.name,
+                    email: app.email,
+                    password: app.password
+                },
+                success() {
+                    app.success = true;
+                },
+                error(response) {
+                    app.error = true;
+                    app.errors = response.response.data.errors;
+                },
+                redirect: null
+            });
+        }
+    }
 }
 </script>
 
-<style>
-:root {
-    --input-padding-x: .75rem;
-    --input-padding-y: .75rem;
-}
-
-html,
-body {
+<style scoped>
+#register-page {
     height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
 }
 
-body {
+#register-page {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;

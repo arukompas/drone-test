@@ -1,7 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 @import url("https://use.fontawesome.com/releases/v5.1.0/css/all.css");
 @import "variables";
 @import '~bootstrap/scss/bootstrap';
+
+:root {
+    --input-padding-x: .75rem;
+    --input-padding-y: .75rem;
+}
+
 
 body {
     font-size: .875rem;
@@ -12,14 +18,8 @@ div#app {
 }
 
 [role="main"] {
-    padding-top: 48px;
+    padding-top: 56px;
     /* Space for fixed navbar */
-}
-
-/** Fix the navbar dropdowns when they're on the edge of right-hand side */
-#navbarMenu .dropdown-menu {
-    left: inherit;
-    right: 0;
 }
 
 /*
