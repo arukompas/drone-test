@@ -17,8 +17,6 @@ window.Vue = Vue;
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 
-axios.defaults.baseURL = 'http://laravel-spa.test';
-
 Vue.router = router;
 
 Vue.use(require('@websanova/vue-auth'), {
@@ -26,9 +24,6 @@ Vue.use(require('@websanova/vue-auth'), {
     http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
     router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
 });
-
-Vue.component('top-nav', require('./layout/TopNav.vue'));
-Vue.component('sidebar-nav', require('./layout/SidebarNav.vue'));
 
 /**
  * Mount the app

@@ -6,6 +6,8 @@
                 <h1 class="h3 mb-3 font-weight-normal">Register</h1>
             </div>
 
+            <div class="alert alert-danger" v-if="error" v-text="error"></div>
+
             <div class="form-label-group">
                 <input v-model="name" type="name" id="inputName" class="form-control" :class="{'is-invalid': hasError('name')}" @input="clearError('name')" placeholder="Your name" required autofocus>
                 <label for="inputName">Name</label>
@@ -40,12 +42,16 @@ export default {
     data() {
         return {
             name: '',
+            error: null,
             errors: {},
         }
     },
 
     methods: {
         register() {
+            this.error = null;
+            this.errors = {};
+
             var vm = this;
 
             this.$auth.register({
@@ -55,8 +61,12 @@ export default {
                     password: vm.password
                 },
                 success() {},
-                error(response) {
-                    vm.errors = response.response.data.errors;
+                error(error) {
+                    if (error.response.status !== 422) {
+                        vm.error = "Oops! Something went wrong.";
+                    } else {
+                        vm.errors = error.response.data.errors;
+                    }
                 },
                 autoLogin: true,
                 redirect: '/dashboard'

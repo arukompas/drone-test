@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row">
                 <sidebar-nav></sidebar-nav>
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <main role="main" class="bg-light col-md-9 ml-sm-auto col-lg-10 px-4">
                     <router-view></router-view>
                 </main>
             </div>
@@ -15,14 +15,19 @@
 
 <script>
 import TopNav from './components/TopNavAdmin.vue';
+import SidebarNav from './components/SidebarNav.vue';
 
 export default {
     components: {
-        TopNav
-    }    
+        TopNav,
+        SidebarNav
+    }
 }
 </script>
 
 <style scoped>
-
+[role="main"] {
+    padding-top: 60px;
+    /* Space for fixed navbar */
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm fixed-top navbar-light">
         <router-link to="/" class="navbar-brand">
             <img src="/images/laravel-logo.png" height="30" class="d-inline-block align-top mr-2" alt="">
             Laravel

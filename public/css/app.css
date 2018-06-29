@@ -10429,11 +10429,6 @@ div#app {
   width: 100%;
 }
 
-[role="main"] {
-  padding-top: 56px;
-  /* Space for fixed navbar */
-}
-
 /*
  * Utilities
  */
@@ -10444,5 +10439,10 @@ div#app {
 
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 

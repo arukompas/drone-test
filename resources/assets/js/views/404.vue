@@ -1,11 +1,11 @@
 <template>
     <div class="container">
-        <div class="row text-center">
+        <div class="row p-5 bg-white rounded box-shadow text-center">
             <h1>404 :(</h1>
 
             <p class="mt-5">Sorry, but the page you were looking for was not found.</p>
 
-            <p class="mt-4">
+            <p class="mt-4 mb-0">
                 <button class="btn btn-lg btn-primary mr-4 py-1 px-4" @click="$router.go(-1)">
                     <i class="fa fa-arrow-left fa-fw mr-2"></i>
                     Go back
