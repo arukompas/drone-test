@@ -1,6 +1,6 @@
 <template>
     <div id="auth-page">
-        <form class="form-auth" @submit.prevent="register" v-show="!success">
+        <form class="form-auth" @submit.prevent="register">
             <div class="text-center mb-4">
                 <img class="mb-4" src="/images/laravel-logo.png" alt="" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">Register</h1>
@@ -28,17 +28,6 @@
             <router-link tag="button" class="btn btn-lg btn-default btn-block mt-4" to="/login">Sign In</router-link>
             <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
         </form>
-
-        <div v-show="success" class="form-auth">
-            <div class="text-center mb-4">
-                <img class="mb-4" src="/images/laravel-logo.png" alt="" height="72">
-                <h1 class="h3 mb-3 font-weight-normal">Welcome</h1>
-
-                <p>Registration successful. You can now sign in.</p>
-
-                <router-link tag="button" class="btn btn-lg btn-primary btn-block mt-4" to="/login">Sign In</router-link>
-            </div>
-        </div>
     </div>
 </template>
 
@@ -65,11 +54,8 @@ export default {
                     email: vm.email,
                     password: vm.password
                 },
-                success() {
-                    vm.success = true;
-                },
+                success() {},
                 error(response) {
-                    vm.error = true;
                     vm.errors = response.response.data.errors;
                 },
                 autoLogin: true,

@@ -38,10 +38,6 @@ let routes = [
             {
                 path: '/dashboard', name: 'dashboard',
                 component: require('../views/Dashboard.vue'),
-            },
-            {
-                path: '/orders', name: 'orders',
-                component: require('../views/Orders.vue'),
             }
         ]
     },

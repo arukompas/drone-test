@@ -50995,9 +50995,6 @@ var routes = [{
     children: [{
         path: '/dashboard', name: 'dashboard',
         component: __webpack_require__(71)
-    }, {
-        path: '/orders', name: 'orders',
-        component: __webpack_require__(73)
     }]
 }, {
     path: '/404',
@@ -51096,7 +51093,9 @@ var staticRenderFns = [
         })
       ]),
       _vm._v(" "),
-      _c("h1", [_vm._v("Welcome to Laravel SPA!")])
+      _c("h1", [_vm._v("Welcome to Laravel SPA!")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Laravel + VueJS Single Page Application boilerplate")])
     ])
   }
 ]
@@ -51330,17 +51329,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -51365,11 +51353,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     email: vm.email,
                     password: vm.password
                 },
-                success: function success() {
-                    vm.success = true;
-                },
+                success: function success() {},
                 error: function error(response) {
-                    vm.error = true;
                     vm.errors = response.response.data.errors;
                 },
 
@@ -51471,73 +51456,8 @@ if (false) {
 }
 
 /***/ }),
-/* 73 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = null
-/* template */
-var __vue_template__ = __webpack_require__(74)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/views/Orders.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6c1fa810", Component.options)
-  } else {
-    hotAPI.reload("data-v-6c1fa810", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 74 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Orders")])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6c1fa810", module.exports)
-  }
-}
-
-/***/ }),
+/* 73 */,
+/* 74 */,
 /* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -53113,8 +53033,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             email: '',
             password: '',
-            error: false,
-            success: false
+            error: null
         };
     }
 });
@@ -53276,14 +53195,6 @@ var render = function() {
     _c(
       "form",
       {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: !_vm.success,
-            expression: "!success"
-          }
-        ],
         staticClass: "form-auth",
         on: {
           submit: function($event) {
@@ -53455,49 +53366,6 @@ var render = function() {
         ])
       ],
       1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.success,
-            expression: "success"
-          }
-        ],
-        staticClass: "form-auth"
-      },
-      [
-        _c(
-          "div",
-          { staticClass: "text-center mb-4" },
-          [
-            _c("img", {
-              staticClass: "mb-4",
-              attrs: { src: "/images/laravel-logo.png", alt: "", height: "72" }
-            }),
-            _vm._v(" "),
-            _c("h1", { staticClass: "h3 mb-3 font-weight-normal" }, [
-              _vm._v("Welcome")
-            ]),
-            _vm._v(" "),
-            _c("p", [_vm._v("Registration successful. You can now sign in.")]),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "btn btn-lg btn-primary btn-block mt-4",
-                attrs: { tag: "button", to: "/login" }
-              },
-              [_vm._v("Sign In")]
-            )
-          ],
-          1
-        )
-      ]
     )
   ])
 }

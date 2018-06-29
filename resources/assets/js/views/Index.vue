@@ -6,6 +6,7 @@
             <img src="/images/vuejs-logo.png" alt="VueJS logo" height="100px">
         </div>
         <h1>Welcome to Laravel SPA!</h1>
+        <p>Laravel + VueJS Single Page Application boilerplate</p>
     </div>
 </template>
 

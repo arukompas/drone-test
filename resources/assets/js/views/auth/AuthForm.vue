@@ -29,8 +29,7 @@ export default {
         return {
             email: '',
             password: '',
-            error: false,
-            success: false
+            error: null,
         }
     },
 }
