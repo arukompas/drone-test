@@ -16,10 +16,6 @@ let routes = [
             {
                 path: '/register', name: 'register',
                 component: require('../views/auth/Register.vue')
-            },
-            {
-                path: '/404',
-                component: require('../views/404.vue'),
             }
         ],
         beforeEnter(to, from, next) {
@@ -48,6 +44,14 @@ let routes = [
                 component: require('../views/Orders.vue'),
             }
         ]
+    },
+    {
+        path: '/404',
+        component: require('../views/404.vue'),
+    },
+    {
+        path: '*',
+        redirect: '/404'
     }
 ];
 
