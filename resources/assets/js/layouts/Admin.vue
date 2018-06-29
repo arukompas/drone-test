@@ -14,8 +14,12 @@
 </template>
 
 <script>
+import TopNav from './components/TopNavAdmin.vue';
+
 export default {
-    
+    components: {
+        TopNav
+    }    
 }
 </script>
 

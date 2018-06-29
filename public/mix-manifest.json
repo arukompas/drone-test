@@ -1,5 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/images/default-user.png": "/images/default-user.png"
+    "/images/default-user.png": "/images/default-user.png",
+    "/images/laravel-logo.png": "/images/laravel-logo.png",
+    "/images/vuejs-logo.png": "/images/vuejs-logo.png"
 }

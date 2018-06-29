@@ -2,14 +2,12 @@
     <div class="master-container">
         <top-nav></top-nav>
 
-        <div class="container">
-            <router-view></router-view>
-        </div>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-import TopNav from '../components/TopNav.vue';
+import TopNav from './components/TopNavGuest.vue';
 
 export default {
     components: {
@@ -23,8 +21,7 @@ export default {
     padding-top: 56px;
 }
 
-.master-container,
-.master-container > .container {
+.master-container {
     height: 100%;
 }
 </style>

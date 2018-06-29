@@ -30,7 +30,6 @@ export default {
             email: '',
             password: '',
             error: false,
-            errors: {},
             success: false
         }
     },

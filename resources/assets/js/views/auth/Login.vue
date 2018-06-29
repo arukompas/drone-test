@@ -2,8 +2,12 @@
     <div id="auth-page">
         <form class="form-auth" @submit.prevent="login">
             <div class="text-center mb-4">
-                <img class="mb-4" src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                <img class="mb-4" src="/images/laravel-logo.png" alt="" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+            </div>
+
+            <div class="alert alert-danger" role="alert" v-if="error">
+                {{ error.message }}
             </div>
 
             <div class="form-label-group">
@@ -44,6 +48,8 @@ export default {
 
     methods: {
         login() {
+            this.error = null;
+
             var app = this;
 
             this.$auth.login({
