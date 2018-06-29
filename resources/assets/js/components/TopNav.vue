@@ -8,7 +8,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarMenu">
-            <div class="navbar-nav ml-auto">
+            <div class="navbar-nav ml-auto" v-if="$auth.check()">
                 <a class="nav-item nav-link active" href="#">
                     Home <span class="sr-only">(current)</span>
                 </a>
@@ -27,6 +27,10 @@
                         <a class="dropdown-item text-danger" href="#" @click.prevent="$auth.logout()"><i class="fa fa-power-off fa-fw mr-1"></i>Logout</a>
                     </div>
                 </div>
+            </div>
+            <div v-else class="navbar-nav ml-auto">
+                <router-link class="nav-item nav-link" to="/login">Sign In</router-link>
+                <router-link class="nav-item nav-link" to="/register">Register</router-link>
             </div>
         </div>
     </nav>

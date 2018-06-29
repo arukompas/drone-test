@@ -37,3 +37,5 @@ Vue.component('sidebar-nav', require('./layout/SidebarNav.vue'));
 App.router = Vue.router;
 
 const app = new Vue(App).$mount('#app');
+
+export default app;
