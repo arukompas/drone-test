@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: registry.gitlab.com/arukompas/sitechecker:latest
+    image: arukomp/php71-laravel:latest
     environment:
       - DB_HOST=mysql
       - DB_USERNAME=root
