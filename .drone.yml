@@ -1,0 +1,17 @@
+pipeline:
+  build:
+    image: registry.gitlab.com/arukompas/sitechecker:latest
+    environment:
+      - DB_HOST=mysql
+      - DB_USERNAME=root
+    commands:
+      - composer install
+      - npm install
+      - npm run prod
+
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_DATABASE: homestead
+      - MYSQL_ROOT_PASSWORD: secret
