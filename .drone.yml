@@ -1,4 +1,13 @@
 pipeline:
+  restore-cache:
+    image: drillster/drone-volume-cache
+    restore: true
+    mount:
+      - ./node_modules
+      - ./vendor
+    volumes:
+      - /tmp/cache:/cache
+
   build:
     image: arukomp/php71-laravel:latest
     environment:
@@ -9,14 +18,18 @@ pipeline:
       - npm install --quiet
       - npm run prod
 
+  rebuild-cache:
+    image: drillster/drone-volume-cache
+    rebuild: true
+    mount:
+      - ./node_modules
+      - ./vendor
+    volumes:
+      - /tmp/cache:/cache
+
 services:
   mysql:
     image: mysql:5.7
     environment:
       - MYSQL_DATABASE=homestead
       - MYSQL_ROOT_PASSWORD=secret
-
-cache:
-  mount:
-    - node_modules
-    - vendor
