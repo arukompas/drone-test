@@ -15,3 +15,8 @@ services:
     environment:
       - MYSQL_DATABASE=homestead
       - MYSQL_ROOT_PASSWORD=secret
+
+cache:
+  mount:
+    - node_modules
+    - vendor
