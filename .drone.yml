@@ -10,6 +10,7 @@ pipeline:
 
   build:
     image: arukomp/php71-laravel:latest
+    pull: true
     environment:
       - DB_HOST=mysql
       - DB_USERNAME=root
