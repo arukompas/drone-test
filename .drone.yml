@@ -5,8 +5,8 @@ pipeline:
       - DB_HOST=mysql
       - DB_USERNAME=root
     commands:
-      - composer install
-      - npm install
+      - composer install --quiet
+      - npm install --quiet
       - npm run prod
 
 services:
