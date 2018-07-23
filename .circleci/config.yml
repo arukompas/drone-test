@@ -36,12 +36,16 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - run: echo "Deploying to live"
-      - run: 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
-      - run: eval $(ssh-agent -s)
-      - run: mkdir -p ~/.ssh
-      - run: '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-      - run: envoy run deploy --commit=$CIRCLE_SHA1
+      - run:
+          name: Setting up SSH
+          command: |
+            'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+            eval $(ssh-agent -s)
+            mkdir -p ~/.ssh
+            '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+      - run:
+          name: Running Envoy deployment script
+          command: envoy run deploy --commit=$CIRCLE_SHA1
 
 workflows:
   version: 2
