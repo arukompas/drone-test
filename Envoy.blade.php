@@ -64,9 +64,13 @@
     ln -nfs {{ $app_dir }}/.env {{ $new_release_dir }}/.env
 
     echo "Caching settings..."
+    cd {{ $new_release_dir }}
     php artisan config:clear
     php artisan cache:clear
     php artisan config:cache
+
+    echo "Running migrations..."
+    php artisan migrate --force
 
     echo "Linking current release..."
     ln -nfs {{ $new_release_dir }} {{ $app_dir }}/current
