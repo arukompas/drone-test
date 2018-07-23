@@ -1,58 +1,34 @@
 version: 2
 jobs:
-  checkout_code:
+  build_and_test:
     docker:
       - image: arukomp/php71-laravel:latest
     working_directory: ~/repo
     steps:
       - checkout
-
-  composer_deps:
-    docker:
-      - image: arukomp/php71-laravel:latest
-    working_directory: ~/repo
-    steps:
       - restore_cache:
           keys:
-          - composer-v1-dependencies-{{ checksum "composer.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - composer-v1-dependencies-
+            - composer-v1-dependencies-{{ checksum "composer.json" }}
+            # fallback
+            - composer-v1-dependencies-
       - run: composer install -n --prefer-dist
       - save_cache:
           paths:
             - ./vendor
           key: composer-v1-dependencies-{{ checksum "composer.json" }}
-      - run: cp .env.example .env
-      - run: php artisan key:generate
-
-  node_deps:
-    docker:
-      - image: arukomp/php71-laravel:latest
-    working_directory: ~/repo
-    steps:
       - restore_cache:
           keys:
-          - node-v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - node-v1-dependencies-
-      - run: npm install
+            - node-v1-dependencies-{{ checksum "package.json" }}
+            # fallback
+            - node-v1-dependencies-
+      - run: npm install --quiet
       - save_cache:
           paths:
             - ./node_modules
           key: node-v1-dependencies-{{ checksum "package.json" }}
-
-  php_tests:
-    docker:
-      - image: arukomp/php71-laravel:latest
-    working_directory: ~/repo
-    steps:
+      - run: cp .env.testing .env
+      - run: php artisan key:generate
       - run: ./vendor/bin/phpunit
-
-  npm_build:
-    docker:
-      - image: arukomp/php71-laravel:latest
-    working_directory: ~/repo
-    steps:
       - run: npm run production
 
   deploy:
@@ -60,26 +36,14 @@ jobs:
       - image: arukomp/php71-laravel:latest
     working_directory: ~/repo
     steps:
+      - checkout
       - run: echo "Deploying to live"
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - checkout_code
-      - composer_deps:
-          requires:
-            - checkout_code
-      - node_deps:
-          requires:
-            - checkout_code
-      - php_tests:
-          requires:
-            - composer_deps
-      - npm_build:
-          requires:
-            - node_deps
+      - build_and_test
       - deploy:
           requires:
-            - php_tests
-            - npm_build
+            -build_and_test
