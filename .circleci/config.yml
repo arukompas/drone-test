@@ -1,10 +1,8 @@
 version: 2
 jobs:
-
-  checkout:
+  checkout_code:
     docker:
       - image: arukomp/php71-laravel:latest
-
     working_directory: ~/repo
     steps:
       - checkout
@@ -68,20 +66,20 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - checkout
+      - checkout_code
       - composer_deps:
-        requires:
-          - checkout
+          requires:
+            - checkout
       - node_deps:
-        requires:
-          - checkout
+          requires:
+            - checkout
       - php_tests:
-        requires:
-          - composer_deps
+          requires:
+            - composer_deps
       - npm_build:
-        requires:
-          - node_deps
+          requires:
+            - node_deps
       - deploy:
-        requires:
-          - php_tests
-          - npm_build
+          requires:
+            - php_tests
+            - npm_build
