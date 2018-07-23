@@ -47,6 +47,14 @@ workflows:
           type: approval
           requires:
             - build_and_test
+          filters:
+            branches:
+              only:
+                - master
       - deploy:
           requires:
             - approve_deployment
+          filters:
+            branches:
+              only:
+                - master
