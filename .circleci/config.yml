@@ -1,41 +1,87 @@
-# PHP CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-php/ for more details
-#
 version: 2
 jobs:
-  build:
+
+  checkout:
     docker:
-      # specify the version you desire here
       - image: arukomp/php71-laravel:latest
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mysql:9.4
 
     working_directory: ~/repo
-
     steps:
       - checkout
 
-      # Download and cache dependencies
+  composer_deps:
+    docker:
+      - image: arukomp/php71-laravel:latest
+    working_directory: ~/repo
+    steps:
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "composer.json" }}
+          - composer-v1-dependencies-{{ checksum "composer.json" }}
           # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
+          - composer-v1-dependencies-
       - run: composer install -n --prefer-dist
-
       - save_cache:
           paths:
             - ./vendor
-          key: v1-dependencies-{{ checksum "composer.json" }}
-        
-      # prepare environment
+          key: composer-v1-dependencies-{{ checksum "composer.json" }}
       - run: cp .env.example .env
       - run: php artisan key:generate
 
-      # run tests!
+  node_deps:
+    docker:
+      - image: arukomp/php71-laravel:latest
+    working_directory: ~/repo
+    steps:
+      - restore_cache:
+          keys:
+          - node-v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - node-v1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - ./node_modules
+          key: node-v1-dependencies-{{ checksum "package.json" }}
+
+  php_tests:
+    docker:
+      - image: arukomp/php71-laravel:latest
+    working_directory: ~/repo
+    steps:
       - run: ./vendor/bin/phpunit
+
+  npm_build:
+    docker:
+      - image: arukomp/php71-laravel:latest
+    working_directory: ~/repo
+    steps:
+      - run: npm run production
+
+  deploy:
+    docker:
+      - image: arukomp/php71-laravel:latest
+    working_directory: ~/repo
+    steps:
+      - run: echo "Deploying to live"
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - checkout
+      - composer_deps:
+        requires:
+          - checkout
+      - node_deps:
+        requires:
+          - checkout
+      - php_tests:
+        requires:
+          - composer_deps
+      - npm_build:
+        requires:
+          - node_deps
+      - deploy:
+        requires:
+          - php_tests
+          - npm_build
