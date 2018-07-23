@@ -960,10 +960,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.router = __WEBPACK_IMPORTED_MODULE_5__routes_router__["a" /* default */];
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__webpack_require__(90), {
-  auth: __webpack_require__(94),
-  http: __webpack_require__(95),
-  router: __webpack_require__(96)
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__webpack_require__(94), {
+  auth: __webpack_require__(98),
+  http: __webpack_require__(99),
+  router: __webpack_require__(100)
 });
 
 /**
@@ -17089,7 +17089,7 @@ module.exports = (function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(6);
-module.exports = __webpack_require__(97);
+module.exports = __webpack_require__(101);
 
 
 /***/ }),
@@ -50462,11 +50462,11 @@ var routes = [{
     },
     children: [{
         path: '/dashboard', name: 'dashboard',
-        component: __webpack_require__(84)
+        component: __webpack_require__(88)
     }]
 }, {
     path: '/404',
-    component: __webpack_require__(86)
+    component: __webpack_require__(90)
 }, {
     path: '*',
     redirect: '/404'
@@ -51899,7 +51899,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(78)
 /* template */
-var __vue_template__ = __webpack_require__(83)
+var __vue_template__ = __webpack_require__(87)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51985,7 +51985,7 @@ exports.push([module.i, "\n[role=\"main\"][data-v-648b12e7] {\n    padding-top: 
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_TopNavAdmin_vue__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_TopNavAdmin_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_TopNavAdmin_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_SidebarNav_vue__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_SidebarNav_vue__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_SidebarNav_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_SidebarNav_vue__);
 //
 //
@@ -52294,6 +52294,266 @@ if (false) {
 /* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(84)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(86)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-7e23cfd0"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/layouts/components/SidebarNav.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7e23cfd0", Component.options)
+  } else {
+    hotAPI.reload("data-v-7e23cfd0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(85);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("463a208d", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7e23cfd0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SidebarNav.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7e23cfd0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SidebarNav.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*\n * Sidebar\n */\n.sidebar[data-v-7e23cfd0] {\n    position: fixed;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    z-index: 100;\n    /* Behind the navbar */\n    padding: 60px 0 0;\n    /* Height of navbar */\n    -webkit-box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);\n            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);\n}\n.sidebar-sticky[data-v-7e23cfd0] {\n    position: relative;\n    top: 0;\n    height: calc(100vh - 48px);\n    padding-top: .5rem;\n    overflow-x: hidden;\n    overflow-y: auto;\n    /* Scrollable contents if viewport is shorter than content. */\n}\n@supports ((position: -webkit-sticky) or (position: sticky)) {\n.sidebar-sticky[data-v-7e23cfd0] {\n        position: -webkit-sticky;\n        position: sticky;\n}\n}\n.sidebar .nav-link[data-v-7e23cfd0] {\n    font-weight: 500;\n    color: #333;\n}\n.sidebar .nav-link .feather[data-v-7e23cfd0] {\n    margin-right: 4px;\n    color: #999;\n}\n.sidebar .nav-link.active[data-v-7e23cfd0] {\n    color: #007bff;\n}\n.sidebar .nav-link:hover .feather[data-v-7e23cfd0],\n.sidebar .nav-link.active .feather[data-v-7e23cfd0] {\n    color: inherit;\n}\n.sidebar-heading[data-v-7e23cfd0] {\n    font-size: .75rem;\n    text-transform: uppercase;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "nav",
+    { staticClass: "col-md-2 d-none d-md-block bg-light sidebar" },
+    [
+      _c("div", { staticClass: "sidebar-sticky" }, [
+        _c(
+          "div",
+          { staticClass: "nav flex-column" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "nav-link", attrs: { to: "/dashboard" } },
+              [
+                _c("i", { staticClass: "fa fa-home fa-fw mr-1" }),
+                _vm._v("\n                Dashboard\n            ")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "nav-link", attrs: { to: "/orders" } },
+              [
+                _c("i", { staticClass: "fa fa-file fa-fw mr-1" }),
+                _vm._v("\n                Orders\n            ")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "nav-link", attrs: { to: "/products" } },
+              [
+                _c("i", { staticClass: "fa fa-shopping-basket fa-fw mr-1" }),
+                _vm._v("\n                Products\n            ")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "nav-link", attrs: { to: "/customers" } },
+              [
+                _c("i", { staticClass: "fa fa-user fa-fw mr-1" }),
+                _vm._v("\n                Customers\n            ")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "nav-link", attrs: { to: "/reports" } },
+              [
+                _c("i", { staticClass: "fa fa-chart-pie fa-fw mr-1" }),
+                _vm._v("\n                Reports\n            ")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "nav-link", attrs: { to: "/reports" } },
+              [
+                _c("i", { staticClass: "fa fa-cogs fa-fw mr-1" }),
+                _vm._v("\n                Integrations\n            ")
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "nav flex-column mb-2" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-link",
+                attrs: { to: "/reports/current-month" }
+              },
+              [
+                _c("i", { staticClass: "fa fa-chart-pie fa-fw mr-1" }),
+                _vm._v("\n                Current Month\n            ")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-link",
+                attrs: { to: "/reports/last-quarter" }
+              },
+              [
+                _c("i", { staticClass: "fa fa-chart-pie fa-fw mr-1" }),
+                _vm._v("\n                Last Quarter\n            ")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-link",
+                attrs: { to: "/reports/social-engagement" }
+              },
+              [
+                _c("i", { staticClass: "fa fa-chart-pie fa-fw mr-1" }),
+                _vm._v("\n                Social Engagement\n            ")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-link",
+                attrs: { to: "/reports/year-end-sale" }
+              },
+              [
+                _c("i", { staticClass: "fa fa-chart-pie fa-fw mr-1" }),
+                _vm._v("\n                Year-end sale\n            ")
+              ]
+            )
+          ],
+          1
+        )
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "h6",
+      {
+        staticClass:
+          "sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
+      },
+      [
+        _c("span", [_vm._v("Saved reports")]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "d-flex align-items-center text-muted",
+            attrs: { href: "#" }
+          },
+          [_c("i", { staticClass: "fa fa-plus-circle fa-fw mr-1" })]
+        )
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7e23cfd0", module.exports)
+  }
+}
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -52338,7 +52598,7 @@ if (false) {
 }
 
 /***/ }),
-/* 84 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -52346,7 +52606,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(85)
+var __vue_template__ = __webpack_require__(89)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52385,7 +52645,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 85 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -52444,19 +52704,19 @@ if (false) {
 }
 
 /***/ }),
-/* 86 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(87)
+  __webpack_require__(91)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(89)
+var __vue_template__ = __webpack_require__(93)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52495,13 +52755,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 87 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(88);
+var content = __webpack_require__(92);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -52521,7 +52781,7 @@ if(false) {
 }
 
 /***/ }),
-/* 88 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -52535,7 +52795,7 @@ exports.push([module.i, "\n.container[data-v-30b290d5] {\n    height: 100%;\n   
 
 
 /***/ }),
-/* 89 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -52602,10 +52862,10 @@ if (false) {
 }
 
 /***/ }),
-/* 90 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Auth = __webpack_require__(91)();
+var Auth = __webpack_require__(95)();
 
 module.exports = (function () {
 
@@ -52646,11 +52906,11 @@ module.exports = (function () {
 })();
 
 /***/ }),
-/* 91 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __utils  = __webpack_require__(92),
-    __token  = __webpack_require__(93),
+var __utils  = __webpack_require__(96),
+    __token  = __webpack_require__(97),
     __cookie = __webpack_require__(18)
 
 module.exports = function () {
@@ -53360,7 +53620,7 @@ module.exports = function () {
 
 
 /***/ }),
-/* 92 */
+/* 96 */
 /***/ (function(module, exports) {
 
 module.exports = (function (){
@@ -53442,7 +53702,7 @@ module.exports = (function (){
 
 
 /***/ }),
-/* 93 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __cookie = __webpack_require__(18);
@@ -53522,7 +53782,7 @@ module.exports = (function () {
 })();
 
 /***/ }),
-/* 94 */
+/* 98 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -53544,7 +53804,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 95 */
+/* 99 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -53610,7 +53870,7 @@ module.exports = {
 
 
 /***/ }),
-/* 96 */
+/* 100 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -53678,273 +53938,10 @@ module.exports = {
 };
 
 /***/ }),
-/* 97 */
+/* 101 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(102)
-}
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = null
-/* template */
-var __vue_template__ = __webpack_require__(104)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-7e23cfd0"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/layouts/components/SidebarNav.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7e23cfd0", Component.options)
-  } else {
-    hotAPI.reload("data-v-7e23cfd0", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 102 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(103);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(3)("463a208d", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7e23cfd0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SidebarNav.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7e23cfd0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SidebarNav.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 103 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*\n * Sidebar\n */\n.sidebar[data-v-7e23cfd0] {\n    position: fixed;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    z-index: 100;\n    /* Behind the navbar */\n    padding: 60px 0 0;\n    /* Height of navbar */\n    -webkit-box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);\n            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);\n}\n.sidebar-sticky[data-v-7e23cfd0] {\n    position: relative;\n    top: 0;\n    height: calc(100vh - 48px);\n    padding-top: .5rem;\n    overflow-x: hidden;\n    overflow-y: auto;\n    /* Scrollable contents if viewport is shorter than content. */\n}\n@supports ((position: -webkit-sticky) or (position: sticky)) {\n.sidebar-sticky[data-v-7e23cfd0] {\n        position: -webkit-sticky;\n        position: sticky;\n}\n}\n.sidebar .nav-link[data-v-7e23cfd0] {\n    font-weight: 500;\n    color: #333;\n}\n.sidebar .nav-link .feather[data-v-7e23cfd0] {\n    margin-right: 4px;\n    color: #999;\n}\n.sidebar .nav-link.active[data-v-7e23cfd0] {\n    color: #007bff;\n}\n.sidebar .nav-link:hover .feather[data-v-7e23cfd0],\n.sidebar .nav-link.active .feather[data-v-7e23cfd0] {\n    color: inherit;\n}\n.sidebar-heading[data-v-7e23cfd0] {\n    font-size: .75rem;\n    text-transform: uppercase;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 104 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "nav",
-    { staticClass: "col-md-2 d-none d-md-block bg-light sidebar" },
-    [
-      _c("div", { staticClass: "sidebar-sticky" }, [
-        _c(
-          "div",
-          { staticClass: "nav flex-column" },
-          [
-            _c(
-              "router-link",
-              { staticClass: "nav-link", attrs: { to: "/dashboard" } },
-              [
-                _c("i", { staticClass: "fa fa-home fa-fw mr-1" }),
-                _vm._v("\n                Dashboard\n            ")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              { staticClass: "nav-link", attrs: { to: "/orders" } },
-              [
-                _c("i", { staticClass: "fa fa-file fa-fw mr-1" }),
-                _vm._v("\n                Orders\n            ")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              { staticClass: "nav-link", attrs: { to: "/products" } },
-              [
-                _c("i", { staticClass: "fa fa-shopping-basket fa-fw mr-1" }),
-                _vm._v("\n                Products\n            ")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              { staticClass: "nav-link", attrs: { to: "/customers" } },
-              [
-                _c("i", { staticClass: "fa fa-user fa-fw mr-1" }),
-                _vm._v("\n                Customers\n            ")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              { staticClass: "nav-link", attrs: { to: "/reports" } },
-              [
-                _c("i", { staticClass: "fa fa-chart-pie fa-fw mr-1" }),
-                _vm._v("\n                Reports\n            ")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              { staticClass: "nav-link", attrs: { to: "/reports" } },
-              [
-                _c("i", { staticClass: "fa fa-cogs fa-fw mr-1" }),
-                _vm._v("\n                Integrations\n            ")
-              ]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "nav flex-column mb-2" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: { to: "/reports/current-month" }
-              },
-              [
-                _c("i", { staticClass: "fa fa-chart-pie fa-fw mr-1" }),
-                _vm._v("\n                Current Month\n            ")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: { to: "/reports/last-quarter" }
-              },
-              [
-                _c("i", { staticClass: "fa fa-chart-pie fa-fw mr-1" }),
-                _vm._v("\n                Last Quarter\n            ")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: { to: "/reports/social-engagement" }
-              },
-              [
-                _c("i", { staticClass: "fa fa-chart-pie fa-fw mr-1" }),
-                _vm._v("\n                Social Engagement\n            ")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: { to: "/reports/year-end-sale" }
-              },
-              [
-                _c("i", { staticClass: "fa fa-chart-pie fa-fw mr-1" }),
-                _vm._v("\n                Year-end sale\n            ")
-              ]
-            )
-          ],
-          1
-        )
-      ])
-    ]
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "h6",
-      {
-        staticClass:
-          "sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
-      },
-      [
-        _c("span", [_vm._v("Saved reports")]),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "d-flex align-items-center text-muted",
-            attrs: { href: "#" }
-          },
-          [_c("i", { staticClass: "fa fa-plus-circle fa-fw mr-1" })]
-        )
-      ]
-    )
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7e23cfd0", module.exports)
-  }
-}
 
 /***/ })
 /******/ ]);
