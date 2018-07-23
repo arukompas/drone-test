@@ -37,6 +37,7 @@ jobs:
     steps:
       - checkout
       - run: echo "Deploying to live"
+      - run: envoy run deploy --commit=$CIRCLE_SHA1
 
 workflows:
   version: 2
