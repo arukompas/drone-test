@@ -5,7 +5,7 @@
             <i class="fa fa-plus fa-3x mx-5"></i>
             <img src="/images/vuejs-logo.png" alt="VueJS logo" height="100px">
         </div>
-        <h1>Welcome to Laravel SPA!</h1>
+        <h1>Welcome to Laravel SPA Test!</h1>
         <p>Laravel + VueJS Single Page Application boilerplate</p>
     </div>
 </template>
