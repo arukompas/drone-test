@@ -69,10 +69,10 @@ workflows:
       - checkout_code
       - composer_deps:
           requires:
-            - checkout
+            - checkout_code
       - node_deps:
           requires:
-            - checkout
+            - checkout_code
       - php_tests:
           requires:
             - composer_deps
